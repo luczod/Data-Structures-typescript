@@ -1,0 +1,12 @@
+{
+  "code-runner.executorMap": {
+    "typescript": "npx sucrase-node"
+  },
+  "code-runner.clearPreviousOutput": true,
+  "vsicons.associations.folders": [
+    {
+      "icon": "component",
+      "extensions": ["classes"]
+    }
+  ]
+}

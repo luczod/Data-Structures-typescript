@@ -55,6 +55,57 @@ export class SetCls<T> implements ISet {
     return unionSet;
   }
 
+  intersection(otherSet: this): Set<T> {
+    const intersectionSet = new Set<T>();
+
+    const current = this.values(); // values from current class
+    const otherValues = otherSet.values(); // values from parameter
+
+    let biggerSet: T[] = current;
+    let smallerSet: T[] = otherValues;
+
+    if (otherValues.length > current.length) {
+      biggerSet = otherValues;
+      smallerSet = current;
+    }
+
+    smallerSet.forEach((value) => {
+      if (biggerSet.includes(value)) {
+        intersectionSet.add(value);
+      }
+    });
+
+    return intersectionSet;
+  }
+
+  difference(otherSet: this): Set<T> {
+    const differenceSet = new Set<T>();
+    // values from current class
+    this.values().forEach((value) => {
+      // values from parameter
+      if (!otherSet.has(value)) {
+        differenceSet.add(value);
+      }
+    });
+
+    return differenceSet;
+  }
+
+  isSubsetOf(otherSet: this): boolean {
+    if (this.size() > otherSet.size()) {
+      return false;
+    }
+
+    const isSubset = this.values().every((value) => {
+      if (!otherSet.has(value)) {
+        return false;
+      }
+      return true;
+    });
+
+    return isSubset;
+  }
+
   sizeLegacy(): number {
     let count = 0;
     for (const key in this.items) {

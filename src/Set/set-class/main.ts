@@ -12,8 +12,3 @@ setA.delete(1);
 console.log(setA.values()); // [2, 3, 4]
 setA.delete(2);
 console.log(setA.values()); // [3, 4]
-
-const setB = new SetCls<number>();
-setB.add(3, 4, 5, 6);
-const unionAB = setA.union(setB);
-console.log('UNION', unionAB.values());

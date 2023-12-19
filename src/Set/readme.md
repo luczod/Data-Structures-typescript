@@ -3,3 +3,8 @@
   of the Set class nor the otherSet passed as a parameter. You methods or functions that have no side effect are called
   pure functions. A pure function does not modify the current instance or parameters:
   it just generates a new result. (page 183)
+
+- **Array.every()**
+  The every method will be called as long as the callback function returns true.
+  If the callback function returns false, the loop will break, which is why
+  we are also changing the value of the isSubset flag on the line. (page 189)

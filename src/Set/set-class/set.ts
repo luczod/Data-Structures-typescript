@@ -8,4 +8,6 @@ export interface ISet {
   size(): number;
   values(): unknown[];
   union(otherSet: ISet): Set<unknown>;
+  intersection(otherSet: ISet): Set<unknown>;
+  difference(otherSet: ISet): Set<unknown>;
 }

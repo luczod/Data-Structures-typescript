@@ -1,5 +1,3 @@
-import { SetCls } from './set-class';
-
 export interface ISet {
   add(...elements: unknown[]): void;
   delete(element: unknown): boolean;

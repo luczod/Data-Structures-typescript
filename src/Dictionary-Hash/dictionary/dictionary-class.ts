@@ -3,7 +3,7 @@ import { defaultToString } from '../utils';
 import { ValuePair } from './value-pair-class';
 
 export default class Dictionary<K, V> implements IDictionaryCls {
-  private table: TDictionary<K, V>;
+  private table: TDictionary<K, V> = {};
 
   constructor(public toStrFn = defaultToString) {}
 
@@ -14,7 +14,6 @@ export default class Dictionary<K, V> implements IDictionaryCls {
   set(key: K, value: V): boolean {
     if (key != null && value != null) {
       const tableKey = this.toStrFn(key);
-
       this.table[tableKey] = new ValuePair(key, value);
 
       return true;
@@ -56,7 +55,7 @@ export default class Dictionary<K, V> implements IDictionaryCls {
     return this.keyValues().map((valuePair) => valuePair.value);
   }
 
-  forEach(callBackFn: (key: K, value?: V) => boolean): void {
+  forEach(callBackFn: (key: K, value?: V) => any): void {
     const valuePairs = this.keyValues();
 
     for (let i = 0; i < valuePairs.length; i++) {
@@ -78,5 +77,20 @@ export default class Dictionary<K, V> implements IDictionaryCls {
 
   isEmpty() {
     return this.size() === 0;
+  }
+
+  toString(): string {
+    if (this.isEmpty()) {
+      return '';
+    }
+
+    const valuePairs = this.keyValues();
+    let objString = `${valuePairs[0].toString()}`;
+
+    for (let i = 1; i < valuePairs.length; i++) {
+      objString = `${objString},${valuePairs[i].toString()}`;
+    }
+
+    return objString;
   }
 }

@@ -4,7 +4,7 @@ export class ValuePair<K, V> {
     public value: V,
   ) {}
 
-  toString(): string {
+  toString() {
     return `[#${this.key}: ${this.value}]`;
   }
 }

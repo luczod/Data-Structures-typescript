@@ -10,5 +10,5 @@ interface IDictionaryCls {
   values(): unknown[];
   keyValues(): unknown[];
   // like Array.every()
-  forEach(callBackFn: (key: unknown, value?: unknown) => boolean): void;
+  forEach(callBackFn: (key: unknown, value?: unknown) => any): void;
 }

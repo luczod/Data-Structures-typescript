@@ -23,7 +23,7 @@ function fibonacci(n: number): number {
   if (n < 1) return 0;
   if (n <= 2) return 1;
 
-  return fibonacci(n - 1) + fibonacci(n - 2); // call recursiva
+  return fibonacci(n - 1) + fibonacci(n - 2); // call recursion
 }
 console.log(fibonacci(3));
 
@@ -34,7 +34,7 @@ function fibonacciMemoization(n: number): number {
 
   const fibonacciMem = (num: number): number => {
     if (memo[num] != null) return memo[num]; // check memo
-    // call recursiva and push to memo
+    // call recursion and push to memo
     return (memo[num] = fibonacciMem(num - 1) + fibonacciMem(num - 2));
   };
 

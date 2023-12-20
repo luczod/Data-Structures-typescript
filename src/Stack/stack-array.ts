@@ -28,4 +28,12 @@ export class StackArr<T> implements IStack {
   clear(): void {
     this.items = [];
   }
+
+  toArray(): T[] {
+    return this.items;
+  }
+
+  toString(): string {
+    return this.items.toString();
+  }
 }

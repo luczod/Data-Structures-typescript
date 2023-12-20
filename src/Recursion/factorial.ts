@@ -17,6 +17,6 @@ function factorial(n: number): number {
   if (n === 1 || n === 0) {
     return 1; // base case -> break
   }
-  return n * factorial(n - 1); // call recursiva
+  return n * factorial(n - 1); // call recursion
 }
 console.log(factorial(5));

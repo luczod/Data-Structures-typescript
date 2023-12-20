@@ -1,5 +1,6 @@
-import LinkedList, { TEqualsFunction } from '../list-single/linked-list-class';
+import LinkedList from '../list-single/linked-list-class';
 import { DoublyNode, Node } from '../models/linked-list-models';
+import { TEqualsFunction } from '../types';
 import { defaultEquals } from '../utils';
 
 export class DoublyLinkedList<T> extends LinkedList<T> {
@@ -131,7 +132,7 @@ export class DoublyLinkedList<T> extends LinkedList<T> {
     let current = this.head.next;
 
     while (current != null) {
-      objString = `${objString},${current.element}`;
+      objString = `${objString}, ${current.element}`;
       current = current.next; // next value
     }
     return objString;

@@ -127,7 +127,7 @@ export default class LinkedList<T> implements ILinkedList {
     let proximate = this.head.next;
 
     for (let i = 1; i < this.size() && proximate != null; i++) {
-      objString = `${objString},${proximate.element}`;
+      objString = `${objString}, ${proximate.element}`;
       proximate = proximate.next; // go to next element
     }
 

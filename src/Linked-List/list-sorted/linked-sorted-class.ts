@@ -14,12 +14,12 @@ export class SortedLinkedList<T> extends LinkedList<T> {
     elements.forEach((element) => this.insert(element));
   }
 
-  insert(element: T): boolean {
+  insert(element: T, index: number = 0): boolean {
     if (this.isEmpty()) {
       return super.insert(element, 0); // first position
     }
-    const pos = this.getIndexNextSortedElement(element); // compare indexes
-    return super.insert(element, pos);
+    index = this.getIndexNextSortedElement(element); // compare indexes
+    return super.insert(element, index);
   }
 
   getIndexNextSortedElement(element: T): number {

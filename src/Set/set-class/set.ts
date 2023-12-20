@@ -5,7 +5,7 @@ export interface ISet {
   clear(): void;
   size(): number;
   values(): unknown[];
-  union(otherSet: ISet): Set<unknown>;
-  intersection(otherSet: ISet): Set<unknown>;
-  difference(otherSet: ISet): Set<unknown>;
+  union(otherSet: ISet): ISet;
+  intersection(otherSet: ISet): ISet;
+  difference(otherSet: ISet): ISet;
 }

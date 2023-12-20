@@ -41,12 +41,16 @@ export class SetCls<T> implements ISet {
     return Object.keys(this.items).length;
   }
 
+  isEmpty(): boolean {
+    return this.size() === 0;
+  }
+
   values(): T[] {
     return Object.values(this.items);
   }
 
-  union(otherSet: this): Set<T> {
-    const unionSet = new Set<T>();
+  union(otherSet: this): SetCls<T> {
+    const unionSet = new SetCls<T>();
     // values from current class
     this.values().forEach((value) => unionSet.add(value));
     // values from parameter
@@ -55,8 +59,8 @@ export class SetCls<T> implements ISet {
     return unionSet;
   }
 
-  intersection(otherSet: this): Set<T> {
-    const intersectionSet = new Set<T>();
+  intersection(otherSet: this): SetCls<T> {
+    const intersectionSet = new SetCls<T>();
 
     const current = this.values(); // values from current class
     const otherValues = otherSet.values(); // values from parameter
@@ -78,8 +82,8 @@ export class SetCls<T> implements ISet {
     return intersectionSet;
   }
 
-  difference(otherSet: this): Set<T> {
-    const differenceSet = new Set<T>();
+  difference(otherSet: this): SetCls<T> {
+    const differenceSet = new SetCls<T>();
     // values from current class
     this.values().forEach((value) => {
       // values from parameter
@@ -104,6 +108,18 @@ export class SetCls<T> implements ISet {
     });
 
     return isSubset;
+  }
+
+  toString(): string {
+    if (this.isEmpty()) {
+      return '';
+    }
+    const values = this.values();
+    let objString = `${values[0]}`;
+    for (let i = 1; i < values.length; i++) {
+      objString = `${objString}, ${values[i].toString()}`;
+    }
+    return objString;
   }
 
   sizeLegacy(): number {

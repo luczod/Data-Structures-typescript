@@ -4,7 +4,7 @@ import { THashTableChaining } from '../types';
 import { defaultToString } from '../utils';
 // avoid collisions
 
-export class HashTable<K, V> {
+export class HashTableSeparateChaining<K, V> {
   private table: THashTableChaining<K, V> = {};
 
   constructor(public toStrFn = defaultToString) {}
@@ -82,6 +82,10 @@ export class HashTable<K, V> {
     }
 
     return false;
+  }
+
+  getTable() {
+    return this.table;
   }
 
   size() {

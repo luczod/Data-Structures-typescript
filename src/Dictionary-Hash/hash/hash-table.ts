@@ -54,6 +54,10 @@ export class HashTable<K, V> {
     return false;
   }
 
+  getTable() {
+    return this.table;
+  }
+
   size() {
     return Object.keys(this.table).length;
   }

@@ -109,6 +109,10 @@ export class HashTableLinearProbing<K extends V, V> {
     return false;
   }
 
+  getTable() {
+    return this.table;
+  }
+
   private verifyRemoveSideEffect(key: K, removedPosition: number): void {
     const hash = this.hashCode(key);
     let index = removedPosition + 1;

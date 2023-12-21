@@ -8,4 +8,4 @@ hash.put('Jamie');
 hash.show('Ygritte');
 hash.show('Athelstan');
 hash.show('Jamie');
-console.log(hash);
+console.log(hash.size());

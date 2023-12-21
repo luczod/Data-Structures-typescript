@@ -5,7 +5,7 @@ To convert a decimal number to a binary representation, we can
 divide the number by 2 (binary is a base 2 number system) until the division result is 0.
 */
 
-function decimalToBinary(decNumber: number) {
+export function decimalToBinary(decNumber: number) {
   const remStack = new StackObj();
   let number = decNumber;
   let rem: number;

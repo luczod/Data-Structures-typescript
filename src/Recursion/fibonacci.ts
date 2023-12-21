@@ -1,5 +1,5 @@
 // Iterative NOT Recursion
-function fibonacciIterative(n: number): number {
+export function fibonacciIterative(n: number): number {
   if (n < 1) return 0;
   if (n <= 2) return 1;
 
@@ -19,7 +19,7 @@ function fibonacciIterative(n: number): number {
 fibonacciIterative(3);
 
 // Recursion
-function fibonacci(n: number): number {
+export function fibonacci(n: number): number {
   if (n < 1) return 0;
   if (n <= 2) return 1;
 
@@ -28,7 +28,7 @@ function fibonacci(n: number): number {
 console.log(fibonacci(3));
 
 // Recursion with Memoizatio ('Cache')
-function fibonacciMemoization(n: number): number {
+export function fibonacciMemoization(n: number): number {
   if (n < 1) return 0;
   const memo = [0, 1];
 

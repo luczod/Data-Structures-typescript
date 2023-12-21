@@ -1,5 +1,5 @@
 // Iterative NOT Recursion
-function factorialIterative(num: number): number {
+export function factorialIterative(num: number): number {
   if (num < 0) return undefined;
 
   let total = 1;
@@ -13,8 +13,8 @@ function factorialIterative(num: number): number {
 console.log(factorialIterative(5));
 
 // Recursion
-function factorial(n: number): number {
-  if (n === 1 || n === 0) {
+export function factorial(n: number): number {
+  if (n < 1) {
     return 1; // base case -> break
   }
   return n * factorial(n - 1); // call recursion

@@ -1,6 +1,6 @@
 import { StackObj } from '../stack-object';
 
-function towerOfHanoi(
+export function towerOfHanoi(
   plates: number,
   source: StackObj<number>,
   helper: StackObj<number>,

@@ -3,7 +3,7 @@ import { Deque } from '../Deque/dequeClass';
 /* As long as we have elements on the deque (if only
 one character, it will be a palindrome) */
 
-function palindromeChecker(aString: string) {
+export function palindromeChecker(aString: string) {
   if (aString === undefined || aString === null || (aString !== null && aString.length === 0)) {
     return false;
   }

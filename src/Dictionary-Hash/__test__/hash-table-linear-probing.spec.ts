@@ -16,10 +16,10 @@ describe('Hash-Table-Linear-Probing', () => {
   it('generates hashcode', () => {
     // numbers
     let hashTable: any = new HashTableLinearProbing<number, number>();
-    expect(hashTable.hashCode(1)).toEqual(1);
-    expect(hashTable.hashCode(10)).toEqual(10);
-    expect(hashTable.hashCode(100)).toEqual(100);
-    expect(hashTable.hashCode(1000)).toEqual(1000);
+    expect(hashTable.hashCode(1)).toEqual(347);
+    expect(hashTable.hashCode(10)).toEqual(356);
+    expect(hashTable.hashCode(100)).toEqual(653);
+    expect(hashTable.hashCode(1000)).toEqual(324);
 
     // objects
     hashTable = new HashTableLinearProbing<MyObj, MyObj>();

@@ -22,10 +22,11 @@ export class SortedLinkedList<T> extends LinkedList<T> {
     return super.insert(element, index);
   }
 
-  getIndexNextSortedElement(element: T): number {
+  private getIndexNextSortedElement(element: T): number {
     let current = this.head; // first position
+    let i = 0;
 
-    for (let i = 0; i < this.size() && current; i++) {
+    for (; i < this.size() && current; i++) {
       const comp = this.compareFn(element, current.element);
       if (comp === Compare.LESS_THAN) {
         return i;
@@ -33,6 +34,6 @@ export class SortedLinkedList<T> extends LinkedList<T> {
       current = current.next;
     }
 
-    return 0; // first position
+    return i; // first position
   }
 }

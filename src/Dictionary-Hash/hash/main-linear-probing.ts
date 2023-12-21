@@ -1,11 +1,9 @@
 import { HashTableLinearProbing } from './hash-table-linear-probing';
 
-const hash = new HashTableLinearProbing<string, string>();
-hash.put('Ygritte');
-hash.put('Athelstan');
-hash.put('Jamie');
+const hashTable = new HashTableLinearProbing<number, number>();
 
-hash.show('Ygritte');
-hash.show('Athelstan');
-hash.show('Jamie');
-console.log(hash.size());
+console.log(hashTable.hashCode(1));
+console.log(hashTable.hashCode(10));
+console.log(hashTable.hashCode(100));
+console.log(hashTable.hashCode(1000));
+console.log(hashTable.hashCode(myObjList[0]));

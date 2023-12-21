@@ -237,6 +237,11 @@ describe('HashTableSeparateChaining', () => {
   it('removes elements with collisions', () => {
     // test all possibilities for removal
     removeWithCollision(A, B, C);
+    removeWithCollision(A, C, B);
+    removeWithCollision(B, A, C);
+    removeWithCollision(B, C, A);
+    removeWithCollision(C, A, B);
+    removeWithCollision(C, B, A);
   });
 
   it('returns toString primitive types without collisions', () => {

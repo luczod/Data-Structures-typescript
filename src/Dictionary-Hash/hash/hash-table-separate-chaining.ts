@@ -84,15 +84,18 @@ export class HashTableSeparateChaining<K, V> {
     return false;
   }
 
-  getTable() {
+  getTable(): THashTableChaining<K, V> {
     return this.table;
   }
 
-  size() {
-    return Object.keys(this.table).length;
+  size(): number {
+    // return Object.keys(this.table).length;
+    let count = 0;
+    Object.values(this.table).forEach((linkedList) => (count += linkedList.size()));
+    return count;
   }
 
-  clear() {
+  clear(): void {
     this.table = {};
   }
 

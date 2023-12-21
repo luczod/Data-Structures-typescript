@@ -7,4 +7,6 @@ tree.insert(14, 20, 18, 25);
 tree.insert(6);
 // tree.show();
 const printNode = (value: number) => console.log(value);
-tree.inOrderTraverse(printNode);
+// tree.inOrderTraverse(printNode);
+// tree.preOrderTraverse(printNode);
+tree.postOrderTraverse(printNode);

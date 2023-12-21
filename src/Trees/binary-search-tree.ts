@@ -12,17 +12,23 @@ export default class BinarySearchTree<K> {
   }
 
   inOrderTraverse(callback: (key: K) => any): void {
-    // from smallest to largest
     this.inOrderTraverseNode(this.root, callback);
   }
 
-  private inOrderTraverseNode(node: NodeBST<K>, callback: (key: K) => any): void {
-    // base case
-    if (node != null) {
-      this.inOrderTraverseNode(node.left, callback); // recursion
-      callback(node.key);
-      this.inOrderTraverseNode(node.right, callback); // recursion
-    }
+  preOrderTraverse(callback: (key: K) => any): void {
+    this.preOrderTraverseNode(this.root, callback);
+  }
+
+  postOrderTraverse(callback: (key: K) => any): void {
+    this.postOrderTraverseNode(this.root, callback);
+  }
+
+  min(): NodeBST<K> {
+    return this.minNode(this.root);
+  }
+
+  max(): NodeBST<K> {
+    return this.maxNode(this.root);
   }
 
   private insertOne(key: K): void {
@@ -48,6 +54,52 @@ export default class BinarySearchTree<K> {
         this.insertNode(node.right, key); // recursion
       }
     }
+  }
+
+  private inOrderTraverseNode(node: NodeBST<K>, callback: (key: K) => any): void {
+    // base case
+    if (node != null) {
+      this.inOrderTraverseNode(node.left, callback); // recursion
+      callback(node.key);
+      this.inOrderTraverseNode(node.right, callback);
+    }
+  }
+
+  private preOrderTraverseNode(node: NodeBST<K>, callback: (key: K) => any): void {
+    // base case
+    if (node != null) {
+      callback(node.key);
+      this.preOrderTraverseNode(node.left, callback); // recursion
+      this.preOrderTraverseNode(node.right, callback);
+    }
+  }
+
+  private postOrderTraverseNode(node: NodeBST<K>, callback: (key: K) => any): void {
+    // base case
+    if (node != null) {
+      callback(node.key);
+      this.postOrderTraverseNode(node.left, callback); // recursion
+      this.postOrderTraverseNode(node.right, callback);
+      callback(node.key); // New
+    }
+  }
+
+  private minNode(node: NodeBST<K>): NodeBST<K> {
+    let current = node;
+
+    while (current != null && current.left != null) {
+      current = current.left;
+    }
+    return current;
+  }
+
+  private maxNode(node: NodeBST<K>): NodeBST<K> {
+    let current = node;
+
+    while (current != null && current.right != null) {
+      current = current.right;
+    }
+    return current;
   }
 
   show(): void {

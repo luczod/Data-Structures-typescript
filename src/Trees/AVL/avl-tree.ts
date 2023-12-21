@@ -1,7 +1,7 @@
-import BinarySearchTree from './binary-search-tree';
-import { NodeBST } from './models/tree-models';
-import { BalanceFactor, Compare, TCompareFunction } from './types';
-import { defaultCompare } from './utils';
+import BinarySearchTree from '../BST/binary-search-tree';
+import { NodeBST } from '../models/tree-models';
+import { BalanceFactor, Compare, TCompareFunction } from '../types';
+import { defaultCompare } from '../utils';
 
 export class AVLTree<K> extends BinarySearchTree<K> {
   constructor(protected compareFn: TCompareFunction<K> = defaultCompare) {

@@ -14,9 +14,20 @@
   visits the root node first, then the left node, and then
   end, the node on the right (page 251)
 
+- **postOrderTraverse**
+  Visits the left node first, then the right node, and then
+  end, the root node (page 252)
+
 - **Min and Max**
   For the minimum value, we will always traverse the left side of the
   tree; for the maximum value, we will always navigate to the right side of it. (page 255)
+
+- **AVL vs Red-Black**
+  if we need a self-balancing tree that involves MANY INSERTIONS
+  OR FREQUENT REMOVALS, the red-black tree will be preferable. If the
+  INSERTIONS AND REMOVALS are LESS FREQUENT (we are interested in
+  frequent search operations), then the AVL tree will be preferable in
+  relation to the red-black tree. (page 274)
 
 - **Leaf**
   the node is a leaf, with no children at all

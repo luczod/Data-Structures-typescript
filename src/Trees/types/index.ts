@@ -12,5 +12,10 @@ export enum BalanceFactor {
   UNBALANCED_LEFT = 5,
 }
 
+export enum Colors {
+  RED = 0,
+  BLACK = 1,
+}
+
 export type TEqualsFunction<T> = (a: T, b: T) => boolean;
 export type TCompareFunction<T> = (a: T, b: T) => number;

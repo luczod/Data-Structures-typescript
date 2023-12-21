@@ -8,5 +8,4 @@ export interface ITree {
   max(): unknown;
   remove(key: unknown): unknown;
   isEmpty(): boolean;
-  size(): number;
 }

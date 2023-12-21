@@ -1,7 +1,7 @@
-import { NodeBST } from './models/tree-models';
+import { NodeBST } from '../models/tree-models';
 import { ITree } from './tree';
-import { Compare, TCompareFunction } from './types';
-import { defaultCompare } from './utils';
+import { Compare, TCompareFunction } from '../types';
+import { defaultCompare } from '../utils';
 
 export default class BinarySearchTree<K> implements ITree {
   protected root: NodeBST<K>;
@@ -48,12 +48,12 @@ export default class BinarySearchTree<K> implements ITree {
     return this.root;
   }
 
-  size(): number {
+  /* size(): number {
     let count = 0;
     const countFn = (value: K) => (count += 1);
-    this.inOrderTraverse(countFn);
+    this.postOrderTraverse(countFn);
     return count;
-  }
+  } */
 
   protected insertOne(key: K): void {
     if (this.root == null) {

@@ -36,3 +36,10 @@
 - **Node height**
   the height of a node is defined as the maximum number
   of edges, not for any of its heets.
+
+- **Red Black Tree Rules**
+  Each node is red or black.
+  The root of the tree is black.
+  All leaves(leaf) are black (nodes represented with NULL reference).
+  If a node is red, then its two children are black.
+  There cannot be two adjacent red nodes. A red node can have a red parent or child.

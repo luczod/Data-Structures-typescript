@@ -17,6 +17,7 @@ export class NodeRedBlack<T> extends NodeBST<T> {
 
   constructor(public key: T) {
     super(key);
+    this.color = Colors.RED;
   }
 
   isRed() {

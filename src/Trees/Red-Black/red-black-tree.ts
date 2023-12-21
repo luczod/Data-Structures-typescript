@@ -11,6 +11,14 @@ export class RedBlackTree<K> extends BinarySearchTree<K> {
     super(compareFn);
   }
 
+  insert(...keys: K[]): void {
+    keys.forEach((key) => this.insertOne(key));
+  }
+
+  getRoot() {
+    return this.root;
+  }
+
   protected insertOne(key: K): void {
     if (this.root == null) {
       this.root = new NodeRedBlack(key);

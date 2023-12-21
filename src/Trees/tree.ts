@@ -1,5 +1,5 @@
 export interface ITree {
-  insert(key: unknown): boolean;
+  insert(...keys: unknown[]): void;
   search(key: unknown): boolean;
   inOrderTraverse(callback: (key: unknown) => any): void;
   preOrderTraverse(callback: (key: unknown) => any): void;

@@ -1,8 +1,9 @@
 import { NodeBST } from './models/tree-models';
+import { ITree } from './tree';
 import { Compare, TCompareFunction } from './types';
 import { defaultCompare } from './utils';
 
-export default class BinarySearchTree<K> {
+export default class BinarySearchTree<K> implements ITree {
   protected root: NodeBST<K>;
 
   constructor(protected compareFn: TCompareFunction<K> = defaultCompare) {}
@@ -23,6 +24,14 @@ export default class BinarySearchTree<K> {
     this.postOrderTraverseNode(this.root, callback);
   }
 
+  search(key: K): boolean {
+    return this.searchNode(this.root, key);
+  }
+
+  remove(key: K): void {
+    this.root = this.removeNode(this.root, key);
+  }
+
   min(): NodeBST<K> {
     return this.minNode(this.root);
   }
@@ -31,7 +40,22 @@ export default class BinarySearchTree<K> {
     return this.maxNode(this.root);
   }
 
-  private insertOne(key: K): void {
+  isEmpty(): boolean {
+    return this.root == null;
+  }
+
+  getRoot() {
+    return this.root;
+  }
+
+  size(): number {
+    let count = 0;
+    const countFn = (value: K) => (count += 1);
+    this.inOrderTraverse(countFn);
+    return count;
+  }
+
+  protected insertOne(key: K): void {
     if (this.root == null) {
       this.root = new NodeBST(key);
     } else {
@@ -39,7 +63,7 @@ export default class BinarySearchTree<K> {
     }
   }
 
-  private insertNode(node: NodeBST<K>, key: K): void {
+  protected insertNode(node: NodeBST<K>, key: K): void {
     if (this.compareFn(key, node.key) === Compare.LESS_THAN) {
       // base case
       if (node.left == null) {
@@ -56,7 +80,7 @@ export default class BinarySearchTree<K> {
     }
   }
 
-  private inOrderTraverseNode(node: NodeBST<K>, callback: (key: K) => any): void {
+  protected inOrderTraverseNode(node: NodeBST<K>, callback: (key: K) => any): void {
     // base case
     if (node != null) {
       this.inOrderTraverseNode(node.left, callback); // recursion
@@ -65,7 +89,7 @@ export default class BinarySearchTree<K> {
     }
   }
 
-  private preOrderTraverseNode(node: NodeBST<K>, callback: (key: K) => any): void {
+  protected preOrderTraverseNode(node: NodeBST<K>, callback: (key: K) => any): void {
     // base case
     if (node != null) {
       callback(node.key);
@@ -74,7 +98,7 @@ export default class BinarySearchTree<K> {
     }
   }
 
-  private postOrderTraverseNode(node: NodeBST<K>, callback: (key: K) => any): void {
+  protected postOrderTraverseNode(node: NodeBST<K>, callback: (key: K) => any): void {
     // base case
     if (node != null) {
       callback(node.key);
@@ -84,7 +108,58 @@ export default class BinarySearchTree<K> {
     }
   }
 
-  private minNode(node: NodeBST<K>): NodeBST<K> {
+  protected searchNode(node: NodeBST<K>, key: K): boolean {
+    // base case
+    if (node == null) {
+      return false;
+    }
+
+    if (this.compareFn(key, node.key) === Compare.LESS_THAN) {
+      return this.searchNode(node.left, key); // recursion
+    } else if (this.compareFn(key, node.key) === Compare.BIGGER_THAN) {
+      return this.searchNode(node.right, key);
+      // when key is not less or bigger, that is equal
+    } else {
+      return true;
+    }
+  }
+
+  protected removeNode(node: NodeBST<K>, key: K): NodeBST<K> | null {
+    if (node == null) {
+      return null;
+    }
+
+    if (this.compareFn(key, node.key) === Compare.LESS_THAN) {
+      node.left = this.removeNode(node.left, key);
+      return node;
+    } else if (this.compareFn(key, node.key) === Compare.BIGGER_THAN) {
+      node.right = this.removeNode(node.right, key);
+      return node;
+    } else {
+      // key is equal to node.item
+      // case 1 - leaf
+      if (node.left == null && node.right == null) {
+        node = null;
+        return node;
+      }
+      // case 2 - has ONE child, left OR right
+      if (node.left == null) {
+        node = node.right;
+        return node;
+      } else if (node.right == null) {
+        node = node.left;
+        return node;
+      }
+      // case 3 - has TWO child, left AND right
+      const aux = this.minNode(node.right);
+      node.key = aux.key;
+      node.right = this.removeNode(node.right, aux.key);
+
+      return node;
+    }
+  }
+
+  protected minNode(node: NodeBST<K>): NodeBST<K> {
     let current = node;
 
     while (current != null && current.left != null) {
@@ -93,7 +168,7 @@ export default class BinarySearchTree<K> {
     return current;
   }
 
-  private maxNode(node: NodeBST<K>): NodeBST<K> {
+  protected maxNode(node: NodeBST<K>): NodeBST<K> {
     let current = node;
 
     while (current != null && current.right != null) {

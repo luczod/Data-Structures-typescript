@@ -17,3 +17,11 @@
 - **Min and Max**
   For the minimum value, we will always traverse the left side of the
   tree; for the maximum value, we will always navigate to the right side of it. (page 255)
+
+- **Leaf**
+  the node is a leaf, with no children at all
+  left nor right
+
+- **Node height**
+  the height of a node is defined as the maximum number
+  of edges, not for any of its heets.

@@ -19,7 +19,7 @@ type returnBFS = {
 
 function initializeColor(vertices: strnum[]): TDictGraph {
   const color: TDictGraph = new Dictionary();
-
+  // All vertices start WHITE because they have not been visited
   for (let i = 0; i < vertices.length; i++) {
     color[vertices[i]] = Colors.WHITE;
   }

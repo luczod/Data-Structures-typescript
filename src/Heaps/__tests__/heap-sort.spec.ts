@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest';
+import { beforeEach, describe, expect, it } from 'vitest';
 import heapSort from '../Algorithms/heap-sort';
 import { Compare } from '../../types';
 
@@ -6,8 +6,13 @@ import { Compare } from '../../types';
 
 describe('Heap Sort', () => {
   const SIZE = 100;
-  const config = { reverseCompare: true };
-  const sortAlgorithm = heapSort;
+  let config: { reverseCompare: boolean };
+  let sortAlgorithm: typeof heapSort;
+
+  beforeEach(() => {
+    config = { reverseCompare: true };
+    sortAlgorithm = heapSort;
+  });
 
   function createNonSortedArray() {
     const array: number[] = [];

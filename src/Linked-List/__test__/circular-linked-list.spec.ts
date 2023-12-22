@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it } from 'vitest';
-import { Node } from '../models/linked-list-models';
+import { Node } from '../../models/linked-list-models';
 import { CircularLinkedList } from '../list-cicular/list-linked-cicular';
 import MyObj from '../__mocks__';
 

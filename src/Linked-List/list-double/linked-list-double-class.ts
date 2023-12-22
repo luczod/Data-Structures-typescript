@@ -1,7 +1,7 @@
 import LinkedList from '../list-single/linked-list-class';
-import { DoublyNode, Node } from '../models/linked-list-models';
-import { TEqualsFunction } from '../types';
-import { defaultEquals } from '../utils';
+import { DoublyNode, Node } from '../../models/linked-list-models';
+import { TEqualsFunction } from '../../types';
+import { defaultEquals } from '../../utils';
 
 export class DoublyLinkedList<T> extends LinkedList<T> {
   protected head: DoublyNode<T> | undefined; // overwrite

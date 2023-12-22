@@ -1,6 +1,6 @@
 import LinkedList from '../list-single/linked-list-class';
-import { defaultEquals, defaultCompare } from '../utils';
-import { Compare, TCompareFunction, TEqualsFunction } from '../types';
+import { defaultEquals, defaultCompare } from '../../utils';
+import { Compare, TCompareFunction, TEqualsFunction } from '../../types';
 
 export class SortedLinkedList<T> extends LinkedList<T> {
   constructor(

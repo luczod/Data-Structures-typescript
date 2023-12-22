@@ -1,7 +1,7 @@
-import { NodeBST } from '../models/tree-models';
+import { NodeBST } from '../../models/tree-models';
 import { ITree } from './tree';
-import { Compare, TCompareFunction } from '../types';
-import { defaultCompare } from '../utils';
+import { BalanceFactor, Compare, TCompareFunction } from '../../types';
+import { defaultCompare } from '../../utils';
 
 export default class BinarySearchTree<K> implements ITree {
   protected root: NodeBST<K>;

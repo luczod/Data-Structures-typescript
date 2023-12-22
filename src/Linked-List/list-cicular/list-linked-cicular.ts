@@ -1,7 +1,7 @@
 import LinkedList from '../list-single/linked-list-class';
-import { Node } from '../models/linked-list-models';
-import { TEqualsFunction } from '../types';
-import { defaultEquals } from '../utils';
+import { Node } from '../../models/linked-list-models';
+import { TEqualsFunction } from '../../types';
+import { defaultEquals } from '../../utils';
 
 export class CircularLinkedList<T> extends LinkedList<T> {
   constructor(protected equalsFn: TEqualsFunction<T> = defaultEquals) {

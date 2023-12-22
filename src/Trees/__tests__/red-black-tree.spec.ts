@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it } from 'vitest';
 import { RedBlackTree } from '../Red-Black/red-black-tree';
-import { Colors } from '../types';
-import { NodeRedBlack } from '../models/tree-models';
+import { Colors } from '../../types';
+import { NodeRedBlack } from '../../models/tree-models';
 
 describe('RedBlackTree', () => {
   let tree: RedBlackTree<number>;

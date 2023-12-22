@@ -1,7 +1,7 @@
 import BinarySearchTree from '../BST/binary-search-tree';
-import { NodeRedBlack } from '../models/tree-models';
-import { Colors, Compare, TCompareFunction } from '../types';
-import { defaultCompare } from '../utils';
+import { NodeRedBlack } from '../../models/tree-models';
+import { Colors, Compare, TCompareFunction } from '../../types';
+import { defaultCompare } from '../../utils';
 
 export class RedBlackTree<K> extends BinarySearchTree<K> {
   // Rubro

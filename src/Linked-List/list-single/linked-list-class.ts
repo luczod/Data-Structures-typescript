@@ -1,7 +1,7 @@
-import { defaultEquals } from '../utils';
-import { Node } from '../models/linked-list-models';
+import { defaultEquals } from '../../utils';
 import { ILinkedList } from './linked-list';
-import { TEqualsFunction } from '../types';
+import { Node } from '../../models/linked-list-models';
+import { TEqualsFunction } from '../../types';
 
 export default class LinkedList<T> implements ILinkedList {
   protected count: number = 0;

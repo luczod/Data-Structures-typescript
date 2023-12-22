@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it } from 'vitest';
 import LinkedList from '../list-single/linked-list-class';
-import { Node } from '../models/linked-list-models';
+import { Node } from '../../models/linked-list-models';
 import MyObj from '../__mocks__';
 
 describe('Linked-List-single', () => {

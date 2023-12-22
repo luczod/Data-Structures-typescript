@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it } from 'vitest';
-import { Node } from '../models/linked-list-models';
+import { Node } from '../../models/linked-list-models';
 import MyObj from '../__mocks__';
 import { SortedLinkedList } from '../list-sorted/linked-sorted-class';
 

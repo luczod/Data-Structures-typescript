@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it } from 'vitest';
-import heapSort from '../heap-sort/heap-sort';
+import heapSort from '../Algorithms/heap-sort';
 import { MinHeap } from '../binary-heap/min-heap-class';
 
 describe('Heap', () => {

@@ -27,3 +27,8 @@
   traversing the graph starting from the first specified vertex and visiting all
   its neighbors (adjacent vertices) before, one layer of the graph at each
   turn. (page 308)
+
+- **BFS in weightless graphs**
+  the shortest route between city A and city B – one
+  algorithm used in GPS and Google Maps, BFS would
+  NOT be an appropriate algorithm. (page 313)

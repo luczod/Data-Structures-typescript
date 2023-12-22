@@ -1,4 +1,4 @@
-import { BFS, breadthFirstSearch } from './Breadth-First-Search/bfs';
+import { BFS, breadthFirstSearch, shortestPath } from './Algorithms/breadth-first-search';
 import { Graph } from './graph-class';
 
 const graph = new Graph<string>();
@@ -21,5 +21,9 @@ graph.addEdge('E', 'I');
 const printVertex = (value: string) => console.log('Visited vertex: ' + value);
 // breadthFirstSearch(graph, myVertices[0], printVertex);
 
-const shortestPathA = BFS(graph, myVertices[0]);
-console.log(shortestPathA);
+const bstfn = BFS(graph, myVertices[0]);
+// console.log(shortestPathA);
+
+const fromVertex = myVertices[0];
+
+shortestPath(fromVertex, myVertices, bstfn);

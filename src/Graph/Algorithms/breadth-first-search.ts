@@ -2,6 +2,7 @@ import Dictionary from '../../Dictionary-Hash/dictionary/dictionary-class';
 import { Queue } from '../../Queues-Deques/Queue/queueClass';
 import { Graph } from '../graph-class';
 import { TCallfn, strnum } from '../../types';
+import { StackObj } from '../../Stack/stack-object';
 
 const Colors = {
   WHITE: 0,
@@ -10,6 +11,11 @@ const Colors = {
 };
 
 type TDictGraph = Dictionary<strnum, strnum[]>;
+
+type returnBFS = {
+  distances: unknown;
+  predecessors: unknown;
+};
 
 function initializeColor(vertices: strnum[]): TDictGraph {
   const color: TDictGraph = new Dictionary();
@@ -51,7 +57,7 @@ export function breadthFirstSearch(graph: Graph<strnum>, startVertex: strnum, ca
 }
 // improved function
 // u -> Vertex | w -> neighbor
-export function BFS(graph: Graph<strnum>, startVertex: strnum) {
+export function BFS(graph: Graph<strnum>, startVertex: strnum): returnBFS {
   const vertices = graph.getVertices();
   const adjList = graph.getAdjList();
   const color = initializeColor(vertices);
@@ -88,4 +94,23 @@ export function BFS(graph: Graph<strnum>, startVertex: strnum) {
     distances,
     predecessors,
   };
+}
+
+export function shortestPath(fromVertex: any, myVertices: any[], bstfn: returnBFS): void {
+  for (let i = 1; i < myVertices.length; i++) {
+    const toVertex = myVertices[i];
+    const path = new StackObj();
+
+    for (let v = toVertex; v !== fromVertex; v = bstfn.predecessors[v]) {
+      path.push(v);
+    }
+
+    path.push(fromVertex);
+    let str = path.pop();
+    while (!path.isEmpty()) {
+      str += ' - ' + path.pop();
+    }
+
+    console.log(str);
+  }
 }

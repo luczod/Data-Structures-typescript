@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import heapSort from '../heap-sort/heap-sort';
+import heapSort from '../Algorithms/heap-sort';
 import { Compare } from '../../types';
 
 // testSortAlgorithm(heapSort, 'Heap Sort');

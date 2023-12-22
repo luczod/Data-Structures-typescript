@@ -14,3 +14,13 @@
   We can use the same code used with MinHeap to test
   MaxHeap. The difference is that the larger value will
   be at the root of the heap, not the smaller value
+
+- **Heapify**
+  The heapify function has the same code as the siftDown method created
+  earlier in this chapter. The difference is that we also pass as
+  parameters the heap itself, its size and the comparison function we want to use.
+
+- **Heapshort**
+  The heap sort algorithm is not a stable sorting algorithm, that is,
+  if the array is already sorted, it is possible that the values may
+  end in a different order.

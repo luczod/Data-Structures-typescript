@@ -1,3 +1,4 @@
+import { BFS, breadthFirstSearch } from './Breadth-First-Search/bfs';
 import { Graph } from './graph-class';
 
 const graph = new Graph<string>();
@@ -15,4 +16,10 @@ graph.addEdge('B', 'E');
 graph.addEdge('B', 'F');
 graph.addEdge('E', 'I');
 // adjacency list
-console.log(graph.toString());
+// console.log(graph.toString());
+
+const printVertex = (value: string) => console.log('Visited vertex: ' + value);
+// breadthFirstSearch(graph, myVertices[0], printVertex);
+
+const shortestPathA = BFS(graph, myVertices[0]);
+console.log(shortestPathA);

@@ -2,7 +2,7 @@ import Dictionary from '../Dictionary-Hash/dictionary/dictionary-class';
 
 export class Graph<T> {
   protected vertices: T[] = [];
-  protected adjList = new Dictionary<T, T[]>();
+  protected adjList: Dictionary<T, T[]> = new Dictionary();
 
   constructor(public isDirected: boolean = false) {}
 
@@ -10,25 +10,25 @@ export class Graph<T> {
     nodes.forEach((node) => this.addVertexOne(node));
   }
 
-  protected addVertexOne(v: T): void {
-    if (!this.vertices.includes(v)) {
-      this.vertices.push(v);
-      this.adjList.set(v, []);
+  protected addVertexOne(vertex: T): void {
+    if (!this.vertices.includes(vertex)) {
+      this.vertices.push(vertex);
+      this.adjList.set(vertex, []);
     }
   }
 
-  addEdge(v: T, w: T): void {
-    if (!this.adjList.get(v)) {
-      this.addVertex(v);
+  addEdge(vertex: T, node: T): void {
+    if (!this.adjList.get(vertex)) {
+      this.addVertex(vertex);
     }
 
-    if (!this.adjList.get(w)) {
-      this.addVertex(w);
+    if (!this.adjList.get(node)) {
+      this.addVertex(node);
     }
 
-    this.adjList.get(v).push(w);
+    this.adjList.get(vertex).push(node);
     if (!this.isDirected) {
-      this.adjList.get(w).push(v);
+      this.adjList.get(node).push(vertex);
     }
   }
 

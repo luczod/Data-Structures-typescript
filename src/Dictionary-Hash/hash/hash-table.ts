@@ -1,6 +1,6 @@
 import { ValuePair } from '../dictionary/value-pair-class';
-import { THashTable } from '../types';
-import { defaultToString } from '../utils';
+import { THashTable } from '../../types';
+import { defaultToString } from '../../utils';
 
 export class HashTable<K, V> {
   private table: THashTable<K, V> = {};

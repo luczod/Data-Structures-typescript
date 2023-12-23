@@ -1,4 +1,4 @@
-import { defaultToString } from '../utils';
+import { defaultToString } from '../../utils';
 import { ValuePairLazy } from './value-pair-lazy';
 
 export default class HashTableLinearProbingLazy<K, V> {

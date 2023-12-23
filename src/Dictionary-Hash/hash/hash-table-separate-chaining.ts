@@ -1,7 +1,7 @@
-import LinkedList from 'src/Linked-List/list-single/linked-list-class';
+import LinkedList from '../../Linked-List/list-single/linked-list-class';
 import { ValuePair } from '../dictionary/value-pair-class';
-import { THashTableChaining } from '../types';
-import { defaultToString } from '../utils';
+import { THashTableChaining } from '../../types';
+import { defaultToString } from '../../utils';
 // avoid collisions
 
 export class HashTableSeparateChaining<K, V> {

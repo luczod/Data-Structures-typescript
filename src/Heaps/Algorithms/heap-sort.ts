@@ -1,4 +1,4 @@
-import { TCompareFunction } from 'src/types';
+import { TCompareFunction } from '../../types';
 import { defaultCompare, swap } from '../../utils';
 
 // Algorithms Heapshort

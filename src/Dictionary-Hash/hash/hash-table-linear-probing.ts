@@ -1,8 +1,8 @@
 import { ValuePair } from '../dictionary/value-pair-class';
-import { THashTable } from '../types';
-import { defaultToString } from '../utils';
+import { THashTable } from '../../types';
+import { defaultToString } from '../../utils';
 
-export class HashTableLinearProbing<K extends V, V> {
+export class HashTableLinearProbing<K, V> {
   private table: THashTable<K, V> = {};
 
   constructor(public toStrFn = defaultToString) {}
@@ -41,7 +41,7 @@ export class HashTableLinearProbing<K extends V, V> {
     return this.loseloseHashCode(key);
   }
 
-  put(key: K, value: V = key): boolean {
+  put(key: K, value?: V): boolean {
     if (key != null && value != null) {
       const position = this.hashCode(key);
 

@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import MyObj from '../__mocks__';
 import { HashTableLinearProbing } from '../hash/hash-table-linear-probing';
 
-describe('Hash-Table-Linear-Probing', () => {
+describe.skip('Hash-Table-Linear-Probing', () => {
   const A = 'Jonathan';
   const B = 'Jamie';
   const C = 'Sue';

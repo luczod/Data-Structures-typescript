@@ -17,5 +17,5 @@ graph.addEdge('B', 'F');
 graph.addEdge('E', 'I');
 
 const printVertex = (value: string) => console.log('Visited vertex: ' + value);
-depthFirstSearch(graph, printVertex);
-console.log(DFS(graph));
+// depthFirstSearch(graph, printVertex);
+console.log(DFS(graph).finished);

@@ -42,7 +42,23 @@
   Gray: indicates that the vertex was visited, but not explored;
   Black: indicates that the vertex has been fully explored.
 
--**Parameters by value and by reference**
-If we modify this value, the new value will have a valid scope only within the function.
-When parameters are passed as references (objects), if we modify any property of the object,
-we will be modifying its value. (page 319)
+- **Parameters by value and by reference**
+  If we modify this value, the new value will have a valid scope only within the function.
+  When parameters are passed as references (objects), if we modify any property of the object,
+  we will be modifying its value. (page 319)
+
+- **Topsort**
+  When there is a need to specify the order in which some
+  tasks or steps must be performed, we call Topsort (page 321)
+
+- **Dijkstra**
+  Dijkstra's algorithm is a greedy algorithm for calculating the
+  shortest path between a single origin and all other vertices. (page 323)
+
+- **Floyd-Warshall**
+  With this algorithm, we can find the shortest path to
+  from all origins to all vertices.
+
+- **Minimum Spanning Tree (MST)**
+  There are two main algorithms for finding MSTs: the
+  Prim and Kruskal's algorithm

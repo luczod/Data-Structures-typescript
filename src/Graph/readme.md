@@ -20,9 +20,9 @@
   BFS and DFS algorithms are very similar, but they have a difference
   important, which is the data structure used to store the list
   of vertices to be visited. (page 300)
-  DFS -> Queue | BFS -> Stack
+  DFS -> Stack | BFS -> Queue
 
-- **BFS (Breadth-First Search) -> Stack**
+- **BFS (Breadth-First Search) -> Queue**
   The BFS (Breadth-First Search) algorithm begins
   traversing the graph starting from the first specified vertex and visiting all
   its neighbors (adjacent vertices) before, one layer of the graph at each
@@ -33,7 +33,7 @@
   algorithm used in GPS and Google Maps, BFS would
   NOT be an appropriate algorithm. (page 313)
 
-- **DFS (Depth-First Search) -> Queue**
+- **DFS (Depth-First Search) -> Stack**
   Mark vertex v as uncovered (gray).
   The unvisited neighbors (white) w of v, visit vertex w.
 
@@ -41,3 +41,8 @@
   White: indicates that the vertex has not yet been visited;
   Gray: indicates that the vertex was visited, but not explored;
   Black: indicates that the vertex has been fully explored.
+
+-**Parameters by value and by reference**
+If we modify this value, the new value will have a valid scope only within the function.
+When parameters are passed as references (objects), if we modify any property of the object,
+we will be modifying its value. (page 319)

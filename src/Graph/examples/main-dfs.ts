@@ -1,4 +1,4 @@
-import { depthFirstSearch } from '../Algorithms/depth-first-search';
+import { DFS, depthFirstSearch } from '../Algorithms/depth-first-search';
 import { Graph } from '../graph-class';
 
 const graph = new Graph<string>();
@@ -18,3 +18,4 @@ graph.addEdge('E', 'I');
 
 const printVertex = (value: string) => console.log('Visited vertex: ' + value);
 depthFirstSearch(graph, printVertex);
+console.log(DFS(graph));

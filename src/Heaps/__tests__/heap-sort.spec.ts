@@ -3,18 +3,13 @@ import heapSort from '../Algorithms/heap-sort';
 import { Compare } from '../../types';
 
 // testSortAlgorithm(heapSort, 'Heap Sort');
+const config = { reverseCompare: true };
+const sortAlgorithm = heapSort;
 
 describe('Heap Sort', () => {
   const SIZE = 100;
-  let config: { reverseCompare: boolean };
-  let sortAlgorithm: typeof heapSort;
 
-  beforeEach(() => {
-    config = { reverseCompare: true };
-    sortAlgorithm = heapSort;
-  });
-
-  function createNonSortedArray() {
+  function createNonSortedArray(): number[] {
     const array: number[] = [];
     for (let i = SIZE; i > 0; i--) {
       array.push(i);
@@ -22,7 +17,7 @@ describe('Heap Sort', () => {
     return array;
   }
 
-  function createSortedArray() {
+  function createSortedArray(): number[] {
     const array: number[] = [];
     for (let i = 1; i <= SIZE; i++) {
       array.push(i);

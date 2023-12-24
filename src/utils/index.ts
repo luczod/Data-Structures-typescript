@@ -12,6 +12,20 @@ export function defaultCompare<T>(a: T, b: T): number {
   return a < b ? Compare.LESS_THAN : Compare.BIGGER_THAN;
 }
 
+export function defaultDiff<T>(a: T, b: T): number {
+  return Number(a) - Number(b);
+}
+
+export function lesserEquals<T>(a: T, b: T, compareFn: TCompareFunction<T> = defaultCompare) {
+  const comp = compareFn(a, b);
+  return comp === Compare.LESS_THAN || comp === Compare.EQUALS;
+}
+
+export function biggerEquals<T>(a: T, b: T, compareFn: TCompareFunction<T> = defaultCompare) {
+  const comp = compareFn(a, b);
+  return comp === Compare.BIGGER_THAN || comp === Compare.EQUALS;
+}
+
 // swap (change) two values in an array
 export function swap<T>(array: T[], a: number, b: number): void {
   const aux = array[a];

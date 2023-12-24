@@ -1,5 +1,14 @@
 import { findMaxValue, findMinValue } from '../search/min-max-search';
 
+/*
+  significantDigit -> radix/root
+
+  The root is based on the number system of array values.
+  For example, for numbers in the decimal system, the root (or base) 10 is
+  used; thus, the algorithm will use 10 buckets to distribute the elements
+
+*/
+
 const countingSortForRadix = (
   array: number[],
   radixBase: number,

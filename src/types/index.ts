@@ -15,6 +15,8 @@ export enum BalanceFactor {
   UNBALANCED_LEFT = 5,
 }
 
+export const NOT_EXIST = -1;
+
 export type strnum = string | number;
 export type TCallfn = (vertex: strnum) => unknown;
 

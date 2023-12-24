@@ -15,10 +15,13 @@
   Two nested loops, responsible by quadratic complexity.
   complexity: O(n²) (page 338)
 
-- **complexity: O(n²)**
-  Two nested loops, responsible by quadratic complexity.
-
-- **Algorithms ordering with distribution**
+- **Sorting Algorithms with distribution**
   Counting sort: Algorithms sort with distribution use auxiliary
-  data structures (known as buckets), which are organized and then
+  data structures (KNOWN AS BUCKET), which are organized and then
   combined, resulting in the sorted array. (page 351)
+
+- **Search algorithms**
+  search method of the BinarySearchTree class or the indexOf method
+  of the LinkedList class, we will see that they are all search algorithms
+  and, of course, each of them has been implemented according to the behavior
+  of your data structure. (page 359)

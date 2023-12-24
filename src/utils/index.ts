@@ -8,6 +8,7 @@ export function defaultCompare<T>(a: T, b: T): number {
   if (a === b) {
     return 0;
   }
+  // LESS OR BIGGER THAN
   return a < b ? Compare.LESS_THAN : Compare.BIGGER_THAN;
 }
 
@@ -32,4 +33,12 @@ export function defaultToString(item: any): string {
   }
 
   return item.toString();
+}
+
+export function createNonSortedArray(size: number): number[] {
+  const array: number[] = [];
+  for (let i = size; i > 0; i--) {
+    array.push(i);
+  }
+  return array;
 }

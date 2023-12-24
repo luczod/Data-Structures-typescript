@@ -28,7 +28,7 @@ function binarySearchRecursive<T>(
   return NOT_EXIST;
 }
 
-export function binarySearch<T>(array: T[], value: T, compareFn = defaultCompare) {
+export function binarySearchMod<T>(array: T[], value: T, compareFn = defaultCompare) {
   const sortedArray = quickSort(array); // ordered before.
   const low = 0;
   const high = sortedArray.length - 1;

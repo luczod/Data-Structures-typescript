@@ -17,3 +17,8 @@
 
 - **complexity: O(n²)**
   Two nested loops, responsible by quadratic complexity.
+
+- **Algorithms ordering with distribution**
+  Counting sort: Algorithms sort with distribution use auxiliary
+  data structures (known as buckets), which are organized and then
+  combined, resulting in the sorted array. (page 351)

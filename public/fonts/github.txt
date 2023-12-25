@@ -2,4 +2,8 @@ https://github.com/loiane/javascript-datastructures-algorithms/tree/main
 
 https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/
 
+https://visualgo.net/en/sorting
+
+https://www.toptal.com/developers/sortingalgorithms.
+
 

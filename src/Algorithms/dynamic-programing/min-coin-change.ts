@@ -39,4 +39,4 @@ export function minCoinChange(coins: number[], amount: number) {
 }
 
 // EXEMPLE
-console.log(minCoinChange([1, 5, 10, 25], 72));
+console.log(minCoinChange([1, 5, 10, 25], 36));

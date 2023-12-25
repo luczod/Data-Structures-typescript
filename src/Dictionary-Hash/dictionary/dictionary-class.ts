@@ -1,5 +1,6 @@
 import { TDictionary } from '../../types';
 import { defaultToString } from '../../utils';
+import { IDictionaryCls } from './dictionary';
 import { ValuePair } from './value-pair-class';
 
 export default class Dictionary<K, V> implements IDictionaryCls {

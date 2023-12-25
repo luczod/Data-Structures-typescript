@@ -1,4 +1,4 @@
-interface IDictionaryCls {
+export interface IDictionaryCls {
   set(key: unknown, value: unknown): boolean;
   remove(key: unknown): boolean;
   hasKey(key: unknown): boolean;

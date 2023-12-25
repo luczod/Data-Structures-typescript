@@ -6,4 +6,3 @@ console.log(hashTable.hashCode(1));
 console.log(hashTable.hashCode(10));
 console.log(hashTable.hashCode(100));
 console.log(hashTable.hashCode(1000));
-console.log(hashTable.hashCode(myObjList[0]));

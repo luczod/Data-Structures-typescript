@@ -4,7 +4,7 @@ export function minCoinChangeGreedy(coins: number[], amount: number) {
 
   for (let i = coins.length; i >= 0; i--) {
     const coin = coins[i];
-    //from largest to smallest
+    // from largest to smallest
     while (total + coin <= amount) {
       change.push(coin);
       total += coin;

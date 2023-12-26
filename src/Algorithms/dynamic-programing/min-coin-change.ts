@@ -11,7 +11,7 @@ export function minCoinChange(coins: number[], amount: number) {
     }
 
     let min: number[] = [];
-    let newMin: number[];
+    let newMin!: number[];
     let newAmount: number;
 
     for (let i = 0; i < coins.length; i++) {
@@ -37,6 +37,3 @@ export function minCoinChange(coins: number[], amount: number) {
 
   return makeChange(amount);
 }
-
-// EXEMPLE
-console.log(minCoinChange([1, 5, 10, 25], 36));

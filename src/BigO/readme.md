@@ -10,12 +10,12 @@ The logarithm, or log, is the inverse of the mathematical
 operation of exponentiation. This means that the log of a number
 is the number that a fixed base has to be raised to in order
 to yield the number.By default base(b) = 10
-log~b~x = y -> x = b^y^
+log<sub>b</sub>x = y -> x = b<sup>y</sup>
 
 - ### NP-complete
 
 In general, we say that an algorithm is efficient if it has complexity
-O(n^k^) for some constant k, and it is called a polynomial algorithm.
+O(n<sup>k</sup>) for some constant k, and it is called a polynomial algorithm.
 NP-complete problems are the most difficult of an NP set.
 
 - ### Heuristic Algorithms

@@ -1,6 +1,8 @@
 import { MenuIcon } from './icons/Menu';
 import { XIcon } from './icons/xIcon';
 
+type TNavLinks = { tooltip: string; text: string };
+
 export function Headerfn() {
   return (
     <header>
@@ -27,96 +29,30 @@ export function Headerfn() {
             id="mobile-menu-2"
           >
             <ul className="flex flex-col space-x-2  font-medium lg:flex-row  lg:mt-0">
-              <li className="tooltip">
-                <a
-                  href="#"
-                  className="lineLink hover:text-gray-50 text-gray-400"
-                  aria-current="page"
-                >
-                  03
-                </a>
-                <span className="tooltiptext">chapter 03: Stacks</span>
-              </li>
-              <li className="tooltip">
-                <a
-                  href="#"
-                  className="lineLink hover:text-gray-50 text-gray-400"
-                  aria-current="page"
-                >
-                  04
-                </a>
-                <span className="tooltiptext">chapter 04: Queues and Deques</span>
-              </li>
-              <li className="tooltip">
-                <a
-                  href="#"
-                  className="lineLink hover:text-gray-50 text-gray-400"
-                  aria-current="page"
-                >
-                  05
-                </a>
-                <span className="tooltiptext">chapter 05: LinkedLists</span>
-              </li>
-              <li className="tooltip">
-                <a
-                  href="#"
-                  className="lineLink hover:text-gray-50 text-gray-400"
-                  aria-current="page"
-                >
-                  06
-                </a>
-                <span className="tooltiptext">chapter 05: LinkedLists</span>
-              </li>
-              <li className="tooltip">
-                <a
-                  href="#"
-                  className="lineLink hover:text-gray-50  text-gray-400"
-                  aria-current="page"
-                >
-                  07
-                </a>
-                <span className="tooltiptext">chapter 07: Dictionaries and Hashes</span>
-              </li>
-              <li className="tooltip">
-                <a
-                  href="#"
-                  className="lineLink hover:text-gray-50 text-gray-400"
-                  aria-current="page"
-                >
-                  08
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="lineLink hover:text-gray-50 text-gray-400"
-                  aria-current="page"
-                >
-                  09
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="lineLink hover:text-gray-50 text-gray-400"
-                  aria-current="page"
-                >
-                  10
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="lineLink hover:text-gray-50 text-gray-400"
-                  aria-current="page"
-                >
-                  11
-                </a>
-              </li>
+              <NavLinks text="03" tooltip="chapter 03: Stacks" />
+              <NavLinks text="04" tooltip="chapter 04: Queues and Deques" />
+              <NavLinks text="05" tooltip="chapter 05: LinkedLists" />
+              <NavLinks text="06" tooltip="chapter 06: LinkedLists" />
+              <NavLinks text="07" tooltip="chapter 07: Dictionaries and Hashes" />
+              <NavLinks text="08" tooltip="chapter 08:" />
+              <NavLinks text="09" tooltip="chapter 09:" />
+              <NavLinks text="10" tooltip="chapter 10:" />
+              <NavLinks text="11" tooltip="chapter 11:" />
             </ul>
           </div>
         </div>
       </nav>
     </header>
+  );
+}
+
+function NavLinks({ text, tooltip }: TNavLinks) {
+  return (
+    <li className="tooltip">
+      <a href="#" className="lineLink hover:text-gray-50 text-gray-400" aria-current="page">
+        {text}
+      </a>
+      <span className="tooltiptext">{tooltip}</span>
+    </li>
   );
 }

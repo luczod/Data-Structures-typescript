@@ -1,9 +1,11 @@
+import { useState } from 'react';
 import { MenuIcon } from './icons/Menu';
 import { XIcon } from './icons/xIcon';
 
 type TNavLinks = { tooltip: string; text: string };
 
 export function Headerfn() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <header>
       <nav className="border-gray-200 shadow-xl px-4 lg:px-6  bg-[#4051B5]">

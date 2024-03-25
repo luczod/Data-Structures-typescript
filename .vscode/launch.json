@@ -7,7 +7,7 @@
     {
       "type": "chrome",
       "request": "launch",
-      "name": "Debug App",
+      "name": "Debug Client-side",
       "url": "http://localhost:8080",
       "webRoot": "${workspaceFolder}/src",
       "sourceMapPathOverrides": {

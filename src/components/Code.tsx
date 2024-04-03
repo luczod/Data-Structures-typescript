@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { darcula, materialLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { darcula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 interface CodeBlockProps {
@@ -28,7 +28,7 @@ export const CodeBlock: React.FC<CodeBlockProps> = ({ children, language }) => {
           </CopyToClipboard>
         </div>
       </div>
-      <SyntaxHighlighter language={language} style={darcula}>
+      <SyntaxHighlighter showLineNumbers language={language} style={darcula}>
         {children}
       </SyntaxHighlighter>
     </div>

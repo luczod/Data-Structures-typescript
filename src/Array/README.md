@@ -1,9 +1,6 @@
 # Array
 
-## Intenção
+## Intention
 
-_Em JavaScript, um array é um objeto mutável. Podemos facilmente lhe acrescentar novos elementos. O objeto crescerá dinamicamente à
-medida que novos elementos forem adicionados. Em várias outras linguagens, por exemplo, em C e em Java, é preciso determinar o tamanho do array e, caso haja necessidade de adicionar mais elementos, um array totalmente novo deverá ser criado; não podemos
-simplesmente adicionar novos elementos ao array à medida que forem necessários._
-
----
+In JavaScript, an array is a mutable object. We can easily add new elements to it. The object will dynamically grow as
+as new elements are added. In several other languages, for example, in C and Java, it is necessary to determine the size of the array and, if there is a need to add more elements, an entirely new array must be created; we cannot simply add new elements to the array as they are needed.

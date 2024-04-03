@@ -29,5 +29,5 @@ function printMatrix(myMatrix: any[]) {
   }
 }
 
-printMatrix(averageTemp);
+// printMatrix(averageTemp);
 console.table(averageTemp);

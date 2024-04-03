@@ -52,19 +52,23 @@ body {
   transition: opacity 0.3s;
 }
 
-/* .tooltip .tooltiptext::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
-} */
-
 .tooltip:hover .tooltiptext {
   font-size: small;
   visibility: visible;
   opacity: 1;
+}
+
+.format-pre {
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+  max-height: 40rem;
+  overflow-y: auto;
+  background-color: #f5f2f0;
+
+  @media (max-width: 768px) {
+    white-space: pre;
+  }
 }

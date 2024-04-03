@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { MenuIcon } from './icons/Menu';
 import { XIcon } from './icons/xIcon';
+import { Link } from 'react-router-dom';
 
-type TNavLinks = { tooltip: string; text: string };
+type TNavLinks = { tooltip: string; text: string; href?: string };
 
 export function Headerfn() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,12 +32,12 @@ export function Headerfn() {
             id="mobile-menu-2"
           >
             <ul className="flex flex-col space-x-2  font-medium lg:flex-row  lg:mt-0">
-              <NavLinks text="03" tooltip="chapter 03: Stacks" />
-              <NavLinks text="04" tooltip="chapter 04: Queues and Deques" />
-              <NavLinks text="05" tooltip="chapter 05: LinkedLists" />
+              <NavLinks text="03" href="/chapter03" tooltip="chapter 03: Arrays" />
+              <NavLinks text="04" tooltip="chapter 04: Stacks" />
+              <NavLinks text="05" tooltip="chapter 05: Queues and Deques" />
               <NavLinks text="06" tooltip="chapter 06: LinkedLists" />
-              <NavLinks text="07" tooltip="chapter 07: Dictionaries and Hashes" />
-              <NavLinks text="08" tooltip="chapter 08:" />
+              <NavLinks text="07" tooltip="chapter 07: LinkedLists" />
+              <NavLinks text="08" tooltip="chapter 08: Dictionaries and Hashes" />
               <NavLinks text="09" tooltip="chapter 09:" />
               <NavLinks text="10" tooltip="chapter 10:" />
               <NavLinks text="11" tooltip="chapter 11:" />
@@ -48,12 +49,12 @@ export function Headerfn() {
   );
 }
 
-function NavLinks({ text, tooltip }: TNavLinks) {
+function NavLinks({ text, tooltip, href = '/#' }: TNavLinks) {
   return (
     <li className="tooltip">
-      <a href="#" className="lineLink hover:text-gray-50 text-gray-400" aria-current="page">
+      <Link to={href} className="lineLink hover:text-gray-50 text-gray-400" aria-current="page">
         {text}
-      </a>
+      </Link>
       <span className="tooltiptext">{tooltip}</span>
     </li>
   );
